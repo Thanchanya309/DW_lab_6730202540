@@ -4,4 +4,7 @@ pip install dbt-duckdb
 pip init <dbt-project-name>
 
 cd <dbt-project-name>
+# test or debu
 dbt debug
+# move back to the main folder
+cd ..
