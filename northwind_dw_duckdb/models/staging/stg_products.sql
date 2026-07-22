@@ -1,14 +1,8 @@
 with source as (
-    select *
-    from        
+    select * from {{ source('northwind', 'products') }}
 )
-with source as (
-    select *
-    from {{ source('northwind_dw_duckdb', 'products') }}  
-    where supplier_id is not like '%%'
 
-)
-select 
+select
     *,
-    current_timestamp() as ingestion_timestamp
+    current_localtimestamp() as ingestion_timestamp
 from source
